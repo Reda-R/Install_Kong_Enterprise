@@ -1,6 +1,6 @@
 # Prerequisites
 
-Install Docker for Mac OS with the following link :
+Install Docker Desktop for Mac OS with the following link :
 
     https://www.docker.com/get-started
 
