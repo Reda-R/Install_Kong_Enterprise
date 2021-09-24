@@ -5,4 +5,4 @@ USAGE :
 
 # How to get a license ?
 
-The license is delivered by Kong Inc.
+The license for Kong Enterprise is delivered by Kong Inc.
