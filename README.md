@@ -22,4 +22,4 @@ Tap the following commands in the Terminal :
 
 # How to get a license ?
 
-The license for Kong Enterprise is delivered by Kong Inc.
+The license for Kong Gateway (Enterprise) is delivered by Kong Inc.
