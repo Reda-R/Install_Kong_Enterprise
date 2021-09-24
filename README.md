@@ -1,4 +1,3 @@
-Install Kong Enterprise using Docker
 # Install_Kong_Enterprise
 USAGE :
     
