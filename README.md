@@ -8,7 +8,7 @@ Now let's install Kong Gateway (Enterprise) on Docker.
 
 # Install Kong Gateway (Enterprise)
 
-Open a Terminal : cmd + space and search "Terminal"
+Open a Terminal : command + space and search "Terminal"
 
 Tap the following commands in the Terminal :
 
