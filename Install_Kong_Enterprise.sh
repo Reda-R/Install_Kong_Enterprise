@@ -90,3 +90,7 @@ curl -X PATCH --url http://localhost:8001/workspaces/default \
 #Access the Dev Portal for the default workspace using the URL specified in the KONG_PORTAL_GUI_HOST variable:
 
 open http://localhost:8003/default
+
+#Pull decK Docker image
+
+docker pull kong/deck
