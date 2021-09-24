@@ -18,7 +18,7 @@ Tap the following commands in the Terminal :
     
     ./Install_Kong_Enterprise.sh 'your_license_Kong_Enterprise'
 
-'your_license_Kong_Enterprise' corresponding to the license give by Kong Inc.
+'your_license_Kong_Enterprise' corresponding to the license give by Kong Inc. You will need to include it between the simple bracket.
 
 # How to get a license ?
 
