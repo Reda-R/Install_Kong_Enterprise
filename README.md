@@ -4,6 +4,8 @@ Install Docker Desktop for Mac OS with the following link :
 
     https://www.docker.com/get-started
 
+Open Docker Desktop : command + space and search "Docker"
+
 Now let's install Kong Gateway (Enterprise) on Docker.
 
 # Install Kong Gateway (Enterprise)
