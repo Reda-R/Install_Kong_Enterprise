@@ -29,7 +29,7 @@ docker run -d --name kong-ee-database \
   -e "POSTGRES_USER=kong" \
   -e "POSTGRES_DB=kong" \
   -e "POSTGRES_PASSWORD=kong" \
-  postgres:12.8
+  postgres:9.6
 
 #Step 4. Prepare the Kong database
 
