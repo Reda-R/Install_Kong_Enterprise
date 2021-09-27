@@ -98,7 +98,4 @@ Set config portal to true :
 
     docker pull kong/deck
 
-
-# How to get a license ?
-
-The license for Kong Gateway (Enterprise) is delivered by Kong Inc.
+Kongratulation, you finished the Installation of Kong Enterprise !
