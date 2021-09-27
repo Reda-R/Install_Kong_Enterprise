@@ -1,3 +1,5 @@
+/!\ THIS INSTALLATION IS ONLY FOR BRAVENN'S MEMBERS /!\
+
 # Prerequisites
 
 Install Docker Desktop for Mac OS with the following link :
