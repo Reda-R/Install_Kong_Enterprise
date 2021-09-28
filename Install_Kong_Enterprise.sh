@@ -76,13 +76,7 @@ sleep 5s
 
 curl -i -X GET --url http://localhost:8001/services
 
-#Wait 5 secondes
-sleep 5s
-
 #You should receive a 200 status code.
-#Verify that Kong Manager is running by accessing it using the URL specified in KONG_ADMIN_GUI_URL in Step 5:
-
-open http://localhost:8002
 
 #Wait 5 secondes
 sleep 5s
@@ -91,6 +85,13 @@ sleep 5s
 
 curl -i -X POST http://localhost:8001/licenses \
   -d payload="$1"
+
+#Wait 5 secondes
+sleep 5s
+
+#Verify that Kong Manager is running by accessing it using the URL specified in KONG_ADMIN_GUI_URL in Step 5:
+
+open http://localhost:8002
 
 #Wait 5 secondes
 sleep 5s
@@ -119,4 +120,4 @@ open http://localhost:8003/default
 
 docker pull kong/deck
 
-echo "Kongratulation, you finished the Installation of Kong Enterprise !"
+echo "<----- Kongratulation, you finished the Installation of Kong Enterprise ! ----->"
