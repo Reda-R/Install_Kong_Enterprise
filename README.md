@@ -18,6 +18,8 @@ Tap the following commands in the Terminal :
 
     cd Install_Kong_Enterprise
     
+Now let's install Kong Enterprise, replace the content between simple bracket by your license :
+
     ./Install_Kong_Enterprise.sh 'your_license_Kong_Enterprise'
 
 Note : 'your_license_Kong_Enterprise' corresponding to the license give by Kong Inc. You will need to include it between the simple bracket.
