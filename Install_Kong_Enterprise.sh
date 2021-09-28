@@ -118,3 +118,5 @@ open http://localhost:8003/default
 #Pull decK Docker image
 
 docker pull kong/deck
+
+echo "Kongratulation, you finished the Installation of Kong Enterprise !"
