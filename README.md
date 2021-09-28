@@ -1,5 +1,3 @@
-/!\ THIS INSTALLATION IS ONLY FOR BRAVENN'S MEMBERS /!\
-
 # Prerequisites
 
 Install Docker Desktop for Mac OS with the following link :
@@ -20,7 +18,9 @@ Tap the following commands in the Terminal :
 
     cd Install_Kong_Enterprise
     
-    ./Install_Kong_Enterprise.sh
+    ./Install_Kong_Enterprise.sh 'your_license_Kong_Enterprise'
+
+Note : 'your_license_Kong_Enterprise' corresponding to the license give by Kong Inc. You will need to include it between the simple bracket.
 
 Kongratulation, you finished the Installation of Kong Enterprise !
 

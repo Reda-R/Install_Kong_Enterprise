@@ -1,8 +1,8 @@
 #Check if the license is present
-#if [ "$#" -ne 1 ]; then
-#  echo "You must enter the license after ./Install_Kong_Enterprise.sh\n\tUSAGE:\n\t\t./Install_Kong_Enterprise.sh 'your_license_Kong_Enterprise'\n"
-#  exit 84
-#fi
+if [ "$#" -ne 1 ]; then
+  echo "You must enter the license after ./Install_Kong_Enterprise.sh\n\tUSAGE:\n\t\t./Install_Kong_Enterprise.sh 'your_license_Kong_Enterprise'\n"
+  exit 84
+fi
 
 #Step 1. Pull the Kong Gateway Docker image
 #Pull the following Docker image.
@@ -89,17 +89,8 @@ sleep 5s
 
 #Deploy the license
 
-#curl -i -X POST http://localhost:8001/licenses \
-#  -d payload="'$1'"
-
 curl -i -X POST http://localhost:8001/licenses \
-  -d payload='{"license":{"version":1,"signature":"e0504a178ba541c5bbc0033cc197b1923dd2ab86f500a945890c50bcd066ee344e3a06ab67639bfb11150a8c2875dc5cdd4949964f743c292c21ca2af4c3a5fd","payload":{"customer":"Bravenn","license_creation_date":"2021-9-7","product_subscription":"Kong Enterprise Edition","support_plan":"None","admin_seats":"5","dataplanes":"0","license_expiration_date":"2022-09-07","license_key":"0011K00002RNLj2QAH_a1V1K0000084vn5UAA"}}}'
-
-
-#export KONG_LICENSE_DATA='{"license":{"version":1,"signature":"e0504a178ba541c5bbc0033cc197b1923dd2ab86f500a945890c50bcd066ee344e3a06ab67639bfb11150a8c2875dc5cdd4949964f743c292c21ca2af4c3a5fd","payload":{"customer":"Bravenn","license_creation_date":"2021-9-7","product_subscription":"Kong Enterprise Edition","support_plan":"None","admin_seats":"5","dataplanes":"0","license_expiration_date":"2022-09-07","license_key":"0011K00002RNLj2QAH_a1V1K0000084vn5UAA"}}}'
-
-#echo "-e "KONG_LICENSE_DATA=$KONG_LICENSE_DATA" \
-#kong reload exit" | docker exec -i kong-ee /bin/sh \
+  -d payload="$1"
 
 #Wait 5 secondes
 sleep 5s
