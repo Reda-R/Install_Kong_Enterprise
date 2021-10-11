@@ -89,13 +89,6 @@ curl -i -X POST http://localhost:8001/licenses \
 #Wait 5 secondes
 sleep 5s
 
-#Verify that Kong Manager is running by accessing it using the URL specified in KONG_ADMIN_GUI_URL in Step 5:
-
-open http://localhost:8002
-
-#Wait 5 secondes
-sleep 5s
-
 #In your container, set the Portal URL and set KONG_PORTAL to on:
 
  echo "KONG_PORTAL_GUI_HOST=localhost:8003 KONG_PORTAL=on kong reload exit" \
@@ -112,12 +105,19 @@ curl -X PATCH --url http://localhost:8001/workspaces/default \
 #Wait 5 secondes
 sleep 5s
 
-#Access the Dev Portal for the default workspace using the URL specified in the KONG_PORTAL_GUI_HOST variable:
-
-open http://localhost:8003/default
-
 #Pull decK Docker image
 
 docker pull kong/deck
+
+#Wait 5 secondes
+sleep 5s
+
+#Verify that Kong Manager is running by accessing it using the URL specified in KONG_ADMIN_GUI_URL in Step 5:
+
+open http://localhost:8002
+
+#Access the Dev Portal for the default workspace using the URL specified in the KONG_PORTAL_GUI_HOST variable:
+
+open http://localhost:8003/default
 
 echo "<----- Kongratulation, you finished the Installation of Kong Enterprise ! ----->"
