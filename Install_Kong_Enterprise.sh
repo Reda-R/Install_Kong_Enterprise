@@ -4,21 +4,35 @@ if [ "$#" -ne 1 ]; then
   exit 84
 fi
 
+#Start Docker
+cd /Applications
+open Docker.app
+echo "<--- Starting Docker --->"
+sleep 25s
+
 #Step 1. Pull the Kong Gateway Docker image
 #Pull the following Docker image.
 
-docker pull kong/kong-gateway:2.5.0.0-alpine
+#docker pull kong/kong-gateway:2.5.0.0-alpine
+docker pull kong/kong-gateway:2.6.0.0-alpine
+
+sleep 2s
 
 #Some older Kong Gateway images are not publicly accessible. If you need a specific patch version and can’t find it on Kong’s public Docker Hub page, contact Kong Support.
 #You should now have your Kong Gateway image locally.
 #Tag the image.
 
-docker tag kong/kong-gateway:2.5.0.0-alpine kong-ee
+#docker tag kong/kong-gateway:2.5.0.0-alpine kong-ee
+docker tag kong/kong-gateway:2.6.0.0-alpine kong-ee
+
+sleep 2s
 
 #Step 2. Create a Docker network
 #Create a custom network to allow the containers to discover and communicate with each other.
 
 docker network create kong-ee-net
+
+sleep 2s
 
 #Step 3. Start a database
 #Start a PostgreSQL container:
@@ -29,7 +43,7 @@ docker run -d --name kong-ee-database \
   -e "POSTGRES_USER=kong" \
   -e "POSTGRES_DB=kong" \
   -e "POSTGRES_PASSWORD=kong" \
-  postgres:12.8
+  postgres:9.6
 
 #Wait 5 secondes
 sleep 5s
