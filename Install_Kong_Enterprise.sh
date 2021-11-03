@@ -119,13 +119,6 @@ curl -X PATCH --url http://localhost:8001/workspaces/default \
 #Wait 5 secondes
 sleep 5s
 
-#Pull decK Docker image
-
-docker pull kong/deck
-
-#Wait 5 secondes
-sleep 5s
-
 #Verify that Kong Manager is running by accessing it using the URL specified in KONG_ADMIN_GUI_URL in Step 5:
 
 open http://localhost:8002
