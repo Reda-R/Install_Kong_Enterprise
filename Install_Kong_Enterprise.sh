@@ -127,4 +127,4 @@ open http://localhost:8002
 
 open http://localhost:8003/default
 
-echo "<----- Kongratulation, you finished the Installation of Kong Enterprise ! ----->"
+echo "\n<----- Kongratulation, you finished the Installation of Kong Enterprise ! ----->"
