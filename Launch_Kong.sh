@@ -20,6 +20,3 @@ sleep 3s
 echo "<--- Kong is running --->"
 open http://localhost:8002/
 echo "<--- Kong Manager is open --->"
-sleep 2s
-open http://localhost:8003/
-echo "<--- Kong Portal is open --->"
