@@ -8,31 +8,29 @@ fi
 cd /Applications
 open Docker.app
 echo "<--- Starting Docker --->"
-sleep 25s
+sleep 25
 
 #Step 1. Pull the Kong Gateway Docker image
 #Pull the following Docker image.
 
-#docker pull kong/kong-gateway:2.5.0.0-alpine
-docker pull kong/kong-gateway:2.6.0.0-alpine
+docker pull kong/kong-gateway:2.7.0.0-alpine
 
-sleep 2s
+sleep 2
 
 #Some older Kong Gateway images are not publicly accessible. If you need a specific patch version and can’t find it on Kong’s public Docker Hub page, contact Kong Support.
 #You should now have your Kong Gateway image locally.
 #Tag the image.
 
-#docker tag kong/kong-gateway:2.5.0.0-alpine kong-ee
-docker tag kong/kong-gateway:2.6.0.0-alpine kong-ee
+docker tag kong/kong-gateway:2.7.0.0-alpine kong-ee
 
-sleep 2s
+sleep 2
 
 #Step 2. Create a Docker network
 #Create a custom network to allow the containers to discover and communicate with each other.
 
 docker network create kong-ee-net
 
-sleep 2s
+sleep 2
 
 #Step 3. Start a database
 #Start a PostgreSQL container:
@@ -46,7 +44,7 @@ docker run -d --name kong-ee-database \
   postgres:9.6
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #Step 4. Prepare the Kong database
 
@@ -58,7 +56,7 @@ docker run --rm --network=kong-ee-net \
   kong-ee kong migrations bootstrap
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #Step 5. Start the gateway with Kong Manager
 
@@ -83,7 +81,7 @@ docker run -d --name kong-ee --network=kong-ee-net \
     kong-ee
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #Step 6. Verify your installation
 #Access the /services endpoint using the Admin API:
@@ -93,7 +91,7 @@ curl -i -X GET --url http://localhost:8001/services
 #You should receive a 200 status code.
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #Deploy the license
 
@@ -101,7 +99,7 @@ curl -i -X POST http://localhost:8001/licenses \
   -d payload="$1"
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #In your container, set the Portal URL and set KONG_PORTAL to on:
 
@@ -109,7 +107,7 @@ sleep 5s
    | docker exec -i kong-ee /bin/sh
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #Execute the following command.
 
@@ -117,14 +115,10 @@ curl -X PATCH --url http://localhost:8001/workspaces/default \
      --data "config.portal=true"
 
 #Wait 5 secondes
-sleep 5s
+sleep 5
 
 #Verify that Kong Manager is running by accessing it using the URL specified in KONG_ADMIN_GUI_URL in Step 5:
 
 open http://localhost:8002
-
-#Access the Dev Portal for the default workspace using the URL specified in the KONG_PORTAL_GUI_HOST variable:
-
-open http://localhost:8003/default
 
 echo "\n<----- Kongratulation, you finished the Installation of Kong Enterprise ! ----->"
